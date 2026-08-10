@@ -16,8 +16,18 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@applitools/eyes-playwright": "^1.17.5",
+    "@applitools/eyes-playwright": "^1.44.4",
     "@playwright/test": "^1.35.1",
     "dotenv": "^16.1.4"
+  },
+  "allowScripts": {
+    "edgedriver@6.3.0": true,
+    "geckodriver@6.1.1": true,
+    "sharp@0.34.5": true
+  },
+
+  "overrides": {
+    "sharp": "^0.35.0"
   }
+
 }
