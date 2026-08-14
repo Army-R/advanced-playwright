@@ -10,7 +10,7 @@ test.beforeEach(async ({ page }) => {
 });
 
 test.describe('Profile - Stored Auth', () => {
-    test('Check logged in', async () => {
+    test.only('Check logged in', async () => {
         await profilePage.checkLoggedIn();
     });
 });
