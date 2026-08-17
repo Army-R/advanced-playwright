@@ -19,7 +19,7 @@ class FormPage {
         this.firstName = page.getByPlaceholder('First Name');
         this.lastName = page.getByPlaceholder('Last Name');
         this.email = page.getByPlaceholder('name@example.com');
-        this.gender = page.getByTestId('genterWrapper');
+        this.gender = page.getByRole('radio', { name: 'Other' })
         this.mobile = page.getByTestId('userNumber');
         this.date = page.getByTestId('dateOfBirthInput');
         this.subjects = page.getByTestId('subjectsInput');
@@ -40,6 +40,11 @@ class FormPage {
    async fillEmailField() {
         await this.email.fill('haku@email.com');
   }
+
+  async selectGender() {
+    await this.gender.click();
+  }
+
 }
 
 export default FormPage;

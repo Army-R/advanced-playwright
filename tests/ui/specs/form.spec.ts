@@ -18,4 +18,7 @@ test.describe('Fill form', () => {
     test('Email Address', async () => {
         await formPage.fillEmailField()
     });
+    test('Select Gender', async () => {
+        await formPage.selectGender()
+    });
 });
