@@ -1,4 +1,3 @@
-import { Location } from "@applitools/eyes-playwright";
 import { Locator, type Page } from "@playwright/test";
 
 class FormPage {
@@ -17,9 +16,9 @@ class FormPage {
 
     constructor(page: Page) {
         this.page = page;
-        this.firstName = page.getByTestId('firstName');
-        this.lastName = page.getByTestId('lastName');
-        this.email = page.getByTestId('userEmail');
+        this.firstName = page.getByPlaceholder('First Name');
+        this.lastName = page.getByPlaceholder('Last Name');
+        this.email = page.getByPlaceholder('name@example.com');
         this.gender = page.getByTestId('genterWrapper');
         this.mobile = page.getByTestId('userNumber');
         this.date = page.getByTestId('dateOfBirthInput');
@@ -29,6 +28,18 @@ class FormPage {
         this.address = page.getByTestId('currentAddress')
         this.city = page.getByTestId('react-select-3-placeholder');
     }
+
+    async fillFirstNameField() {
+        await this.firstName.fill('Haku');
+  }
+
+   async fillLastNameField() {
+        await this.lastName.fill('Akatku');
+  }
+
+   async fillEmailField() {
+        await this.email.fill('haku@email.com');
+  }
 }
 
 export default FormPage;
