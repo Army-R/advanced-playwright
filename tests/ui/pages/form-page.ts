@@ -1,4 +1,4 @@
-import { Locator, type Page } from "@playwright/test";
+import { expect, Locator, type Page } from "@playwright/test";
 
 class FormPage {
     readonly page: Page;
@@ -31,6 +31,7 @@ class FormPage {
 
     async fillFirstNameField() {
         await this.firstName.fill('Haku');
+        await expect(this.firstName).toBeVisible();
   }
 
    async fillLastNameField() {
